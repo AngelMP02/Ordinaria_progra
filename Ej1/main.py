@@ -1,7 +1,7 @@
 from tweet import Tweet
 from retweet import Retweet
 from direct_message import DirectMessage
-from twitter import UserAccount
+from Ej1.twitter import UserAccount
 
 if __name__ == '__main__':
     # Crear usuarios
