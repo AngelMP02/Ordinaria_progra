@@ -1,3 +1,6 @@
+from tweet import Tweet
+from retweet import Retweet
+from direct_message import DirectMessage
 class UserAccount:
     def __init__(self, username):
         self.username = username
@@ -27,8 +30,19 @@ class UserAccount:
 user1 = UserAccount("user1")
 user2 = UserAccount("user2")
 
-user1.follow(user2)
+tweet1 = Tweet("¡Hola, este es mi primer tweet!", user1)
+print(tweet1.message)  # "¡Hola, este es mi primer tweet!"
+print(tweet1.sender)  # user1
+print(tweet1.time)  # Instancia de la clase datetime con el momento actual
 
-user1.tweet("¡Hola, este es mi primer tweet!")
-print(user1.tweets)  # ["¡Hola, este es mi primer tweet!"]
-print(user2.tweets)  # []
+retweet1 = Retweet("¡Me encanta este tweet!", user2, tweet1)
+print(retweet1.message)  # "¡Me encanta este tweet!"
+print(retweet1.sender)  # user2
+print(retweet1.time)  # Instancia de la clase datetime con el momento actual
+print(retweet1.retweeted_tweet)  # Instancia del Tweet original (tweet1)
+
+dm = DirectMessage("¡Hola! ¿Cómo estás?", user1, user2)
+print(dm.message)  # "¡Hola! ¿Cómo estás?"
+print(dm.sender)  # user1
+print(dm.time)  # Instancia de la clase datetime con el momento actual
+print(dm.receiver)  # user2
