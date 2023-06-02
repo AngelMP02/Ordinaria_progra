@@ -1,6 +1,4 @@
-from tweet import Tweet
-from retweet import Retweet
-from direct_message import DirectMessage
+
 class UserAccount:
     def __init__(self, username):
         self.username = username
