@@ -9,3 +9,5 @@ class Tweet:
         self.message = message
         self.sender = sender
         self.time = datetime.now()
+    def __str__(self):
+        return f"Tweet from {self.sender.username} at {self.time}: {self.message}"
